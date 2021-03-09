@@ -1,0 +1,52 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<stdio.h>
+
+void main()
+{
+	int a[20],i,j,n,temp,pos,ch;
+	clrscr();
+	cout<<"Enter the size of Array:"<<endl;
+	cin>>n;
+	cout<<"Enter Array Elements:\n";
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+
+	}
+	/*Sorting the array*/
+	for(i=0;i<=n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(a[j+1]>a[j])
+			{
+				temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}
+	}
+	cout<<"Sorted Array:\n";
+	for(i=0;i<n;i++)
+	{
+		cout<<a[i]<<"  ";
+	}
+	while(1)
+	{
+		cout<<"\n1.Find nth Largest:\n2.Exit\nEnter your choice:  ";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1: cout<<"\nEnter the position of largest Element that you want to search:\n";
+				cin>>pos;
+				cout<<a[pos];
+				break;
+			case 2: return;
+			default:cout<<"Wrong choice\n";
+				break;
+		}
+	getch();
+	}
+}
